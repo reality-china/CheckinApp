@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>签到系统</title>
+  <link rel="stylesheet" type="text/css" href="js/rstyle.css" />
+ 
+</head>
+<body>
+<div id="register">
+<table id="rtable">
+  <tr><td class="rinem" colspan="2"></td></tr>
+  <tr><td class="title" colspan="2">请登记个人信息</td></tr>
+  <tr><td class="rine" colspan="2"></td></tr>
+  <tr><td class="rin">姓名:</td><td class="rinput"><input id="tName" class="rinputtext" type="text"></td></tr>
+  <tr><td class="rin">电话:</td><td class="rinput"><input id="tPhone" class="rinputtext" type="text"></td></tr>
+  <tr><td class="rinm" colspan="2">备注（公司名称或入会方式）：</td></tr>
+  <tr><td class="rinm" colspan="2">
+    <textarea id="tCompany" class="textarea"></textarea>
+  </td></tr>
+  <tr><td class="rbtn" colspan="2">
+    <Button class="cancel" id="registerBtn" onclick="registerEvent()"  name="" >登 记</Button>
+  </td></tr>
+   <tr><td class="rback" colspan="2"><A href="index.html">返 回</A></td></tr>
+</table>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+
+//签到
+function registerEvent(){ 
+   var tname = document.getElementById("tName");
+   var name = "";
+  var tphone = document.getElementById("tPhone");
+  
+   var tcompany = document.getElementById("tCompany"); 
+   
+ 
+  if(tname == null || tname.value=="null" || tname.value.replace(/\s*/g,"")=="" ){
+    alert('请填写姓名！');
+    return;
+  }
+  else{
+    name = tname.value;
+  }
+
+  var phone="";
+  if(tphone != null && tphone.value!="null" && tphone.value.replace(/\s*/g,"")!="")
+  {
+    phone = tPhone.value
+  }
+
+  var memo="";
+  if(tcompany != null && tcompany.value!="null" && tcompany.value.replace(/\s*/g,"")!="")
+  {
+    memo = tcompany.value
+  }
+
+  jQuery.support.cors = true;
+   $.ajax({
+   type: "get",
+   url: "http://test.wechataccount.rcn8.cn/register?n=" + encodeURI(name)+"&p="+encodeURI(phone)+"&m="+encodeURI(memo),
+   contentType:'application/x-www-form-urlencoded;charset=utf-8',
+   //data: 'data:11111',
+   success: function(msg){
+      if(msg == "success"){
+        alert("登记成功！" );
+        window.location.href="index.html";
+      }
+      else
+      {
+        alert("服务器忙，请重试！" );
+      }
+   },
+   error:  function (jqXHR, textStatus, errorThrown){
+      ////alert(jqXHR);
+     // alert(textStatus);
+      alert(errorThrown);
+    }
+  });
+}
+</script>
+</html>

@@ -1,0 +1,295 @@
+*
+{
+    outline: none;
+}
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: white;
+}
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    /*color: #fff;*/
+    color: black;
+    font-family: Nunito;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    width: 550px;
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    /*background-color: #ff7575;*/
+    background-color:  #d0d0d0;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #f0f0f0, 0 0 0 20px #f0f0f0;
+}
+
+form
+{
+    height: 96px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 96px;
+    font-size: 50px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    /*color: #e16868;*/
+    color: black;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 43px;
+    height: 43px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 15px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+.divcss5-b{ 
+   /* position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 550px;
+    height: 50%;
+    margin: -83px auto 0 auto;*/
+    margin-top: 10%;
+    height: 320px;
+    overflow-y:auto; 
+} 
+
+
+
+#searchShow{
+    font-size:28px;
+
+    width: 100%;
+   /* border:1px solid #ccc;*/
+   border-collapse: collapse;
+   /*color: #fff;*/
+   color: black;
+   margin-top: 10px;
+ 
+}
+#searchShow tr td{
+    border-bottom:0.1px dashed  #e0e0e0;
+    padding:4px 5px;
+    /*color: #fff;*/
+     color: black;
+ 
+} 
+#searchShow td:hover {
+    border: 1px solid #e0e0e0;
+}
+
+
+#checkin{
+  position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    width: 550px;
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    height: 200px；
+    /*background-color: red;*/
+    text-align: center;
+    /*border-radius: 20px;
+    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;*/
+}
+
+#lblName{
+    color: black;
+    font-size: 60px;
+}
+
+#wel{
+    color: black;
+    font-size: 40px;
+}
+
+.row {
+  display:block;
+  width:100%;
+  min-height:75px;
+  height:auto;
+  margin-top: 10%;
+}
+
+.btn {
+  float: left;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 7px 11px 0;
+  color: #888;
+
+  text-align: center;
+
+  /* so nobody selects the inside text on button */
+  user-select: none;
+
+  /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+  transition: all 0.2s ease;
+}
+.btn-large {
+  line-height: 80px;
+  width: 100%;
+  height: 85px;
+  font-size: 40px;
+}
+
+.cancel {
+  background: #d0d0d0;
+  /*box-shadow: 0px 5px #e0e0e0;*/
+  box-shadow:0 5px 5px #f0f0f0, 0 0 0 5px #f0f0f0;
+  color: black;
+}
+
+.cancel:hover {
+  background: #bebebe;
+   box-shadow:0 5px 5px #f0f0f0, 0 0 0 5px #f0f0f0;
+  color: black;
+}
+
+/* Imitate a pressed effect for buttons */
+.cancel:active {
+  top: 4px;
+   box-shadow:0 5px 5px #f0f0f0, 0 0 0 5px #f0f0f0;
+}
+
+/*#searchShow tr:nth-child(even) {  
+    background: #eee;  
+    color: white;
+}  
+#searchShow tr:nth-child(odd) {  
+    background: #000;  
+    color: white;
+} */
+
+
